@@ -26,44 +26,6 @@ Se utilizará la metodología **Agile Kanban con cadencia semanal** y el enfoque
 
 ---
 
-## 📂 Estructura del Proyecto (inicial)  
-/db
-  /migrations/        # Flyway OR Sqitch (elige una)
-  /seed/              # CSVs ejemplo, loaders
-  /functions/         # SQL de funciones/vistas (opcional, si no va en migrations)
-  schema.sql          # snapshot referencia (solo lectura)
-/src
-  /py
-    /etl/             # carga CSV → DB (psycopg)
-    /logic/           # reglas (F/C), prototipos ML
-    /ui/              # app mínima (CLI/API)
-    __init__.py
-  /c
-    /logic/           # reglas críticas, libpq
-    /bindings/        # (opcional) interfaz C↔Python si aplica
-    Makefile
-/tests
-  /sql/               # pgTAP
-  /python/            # pytest
-  /c/                 # cmocka/Unity (opcional)
-/docs
-  ADR-0001-docker-vs-vm.md
-  ADR-0002-sku-base.md
-  RUNBOOK.md
-  README.md
-/infra
-  docker-compose.yml
-  Dockerfile.app      # imagen para src/py
-  Dockerfile.db       # imagen postgres si personalizas
-  flyway.conf         # o sqitch.conf, según elección
-/config
-  app.example.toml    # config de la app
-  db.example.toml
-.env.example
-Makefile              # orquesta: lint, test, migrate, seed
-.github/workflows/ci.yml
-
----
 
 ## 🛠️ Tecnologías y Herramientas  
 - **Lenguajes:**  
