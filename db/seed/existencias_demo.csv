@@ -1,11 +1,9 @@
 pr_almacen,pr_clave,pr_descripcion,pr_costo,pr_existencia,proveedor,ps_nombre
-101,F0001,PLAYERA BÁSICA HOMBRE,120.00,30,PV01,Provee SA
-101,C0001,PLAYERA BÁSICA HOMBRE CONSIG,120.00,20,PV02,Consign SA
-102,F0002,JEANS CLÁSICO,300.00,15,PV01,Provee SA
-102,C0002,JEANS CLÁSICO CONSIG,300.00,10,PV02,Consign SA
-103,F0001,PLAYERA BÁSICA HOMBRE,120.00,5,PV01,Provee SA
-105,F0002,JEANS CLÁSICO,300.00,4,PV01,Provee SA
-106,C0001,PLAYERA BÁSICA HOMBRE CONSIG,120.00,2,PV02,Consign SA
-101,F0003,CHAMARRA LIGERA,550.00,8,PV03,RopaMax
-102,C0003,CHAMARRA LIGERA CONSIG,550.00,6,PV03,RopaMax
-101,F0004,TENIS URBANOS,800.00,12,PV04,Deportix
+101,F0151646016,Artículo Firme Normal,120,50,1646,Proveedor Maderas
+101,FF213940180,Artículo Firme Doble F,80,35,1394,Proveedor Cerámicas
+101,AF0151646016,Artículo Activo Fijo,115,12,1646,Proveedor Maderas
+101,C0151646016,Artículo Consignación,50,40,1646,Proveedor Maderas
+101,X999999,Artículo Desconocido,60,5,9999,Proveedor Fantasma
+103,FF213940180,Artículo Firme Doble F,82,7,1394,Proveedor Cerámicas
+105,F0151646016,Artículo Firme Normal,121,9,1646,Proveedor Maderas
+106,C0151646016,Artículo Consignación,49,6,1646,Proveedor Maderas
