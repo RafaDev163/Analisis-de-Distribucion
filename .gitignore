@@ -1,3 +1,57 @@
 .env
 .env.*
 !.env.example
+# ========================
+# Archivos temporales / OS
+# ========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========================
+# Config local / secretos
+# ========================
+#.env
+*.local
+*.toml.local
+
+# ========================
+# Archivos de compilación
+# ========================
+*.o
+*.so
+*.dll
+*.exe
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# ========================
+# Archivos grandes/backup
+# ========================
+*.zip
+*.tar.gz
+*.bak
+*.dump
+*.log
+
+# ========================
+# Salidas de pruebas
+# ========================
+coverage/
+htmlcov/
+*.out
+*.gcda
+*.gcno
+*.gcov
+
+# ========================
+# DB seeds opcionales
+# ========================
+# db/seed/*_real_*.csv
+
+# ========================
+# Notas locales
+# ========================
+estructura_repo.txt
