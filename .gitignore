@@ -49,7 +49,7 @@ htmlcov/
 # ========================
 # DB seeds opcionales
 # ========================
-# db/seed/*_real_*.csv
+ db/seed/*_real_*.csv
 
 # ========================
 # Notas locales
