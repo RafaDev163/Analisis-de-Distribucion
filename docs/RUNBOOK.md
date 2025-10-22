@@ -128,7 +128,7 @@ Este procedimiento se ejecuta **cada lunes** para cargar el reporte de existenci
 7. **Generar snapshot de inventario**
 
     Insertar en fact_inventario con deduplicación por (fecha_corte, almacen_sk, articulo_sk):
-     $FECHA_CORTE = "especificar fecha que se usara para el corte"
+     $FECHA_CORTE = "especificar fecha que se usara para el corte formato: YYYY-MM-DD"
      
      docker exec -it pg16 psql -U rafa -d Inventario_TMAP -c `
      "WITH params AS (SELECT DATE '$FECHA_CORTE' AS fecha_corte),
@@ -152,21 +152,25 @@ Este procedimiento se ejecuta **cada lunes** para cargar el reporte de existenci
         SET existencia = EXCLUDED.existencia;"
 
 8. **Validaciones finales**
-    * Conteo de filas en staging 
-        SELECT COUNT(*) FROM stg_existencias_familia;
+    * Conteo de filas en staging
+        docker exec -it pg16 psql -U rafa -d Inventario_TMAP -c `
+        "SELECT COUNT(*) FROM stg_existencias_familia;"
     
     * Artículos con familia asignada:
-        SELECT COUNT(*) FROM dim_articulo WHERE familia_id IS NOT NULL;
+        docker exec -it pg16 psql -U rafa -d Inventario_TMAP -c `
+        "SELECT COUNT(*) FROM dim_articulo WHERE familia_id IS NOT NULL;"
     
     * Códigos de familia faltantes en catálogo:
-        SELECT clasificacion, COUNT(*)
+        docker exec -it pg16 psql -U rafa -d Inventario_TMAP -c `
+        "SELECT clasificacion, COUNT(*)
         FROM stg_existencias_familia s
         LEFT JOIN dim_familia df ON df.familia_codigo = TRIM(s.clasificacion)
         WHERE df.familia_id IS NULL
-        GROUP BY 1 ORDER BY 2 DESC;
+        GROUP BY 1 ORDER BY 2 DESC;"
     
     * Resumen del snapshot:
-        SELECT fecha_corte, COUNT(*) AS filas, SUM(existencia) AS total_unidades
+        docker exec -it pg16 psql -U rafa -d Inventario_TMAP -c `
+        "SELECT fecha_corte, COUNT(*) AS filas, SUM(existencia) AS total_unidades
         FROM fact_inventario
-        GROUP BY 1 ORDER BY 1 DESC LIMIT 5;
+        GROUP BY 1 ORDER BY 1 DESC LIMIT 5;"
 
