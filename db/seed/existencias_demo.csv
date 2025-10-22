@@ -1,9 +1,0 @@
-pr_almacen,pr_clave,pr_descripcion,pr_costo,pr_existencia,proveedor,ps_nombre
-101,F0151646016,Artículo Firme Normal,120,50,1646,Proveedor Maderas
-101,FF213940180,Artículo Firme Doble F,80,35,1394,Proveedor Cerámicas
-101,AF0151646016,Artículo Activo Fijo,115,12,1646,Proveedor Maderas
-101,C0151646016,Artículo Consignación,50,40,1646,Proveedor Maderas
-101,X999999,Artículo Desconocido,60,5,9999,Proveedor Fantasma
-103,FF213940180,Artículo Firme Doble F,82,7,1394,Proveedor Cerámicas
-105,F0151646016,Artículo Firme Normal,121,9,1646,Proveedor Maderas
-106,C0151646016,Artículo Consignación,49,6,1646,Proveedor Maderas
